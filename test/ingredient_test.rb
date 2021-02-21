@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require_relative "../lib/meal_planner"
+require_relative "test_helper"
 
 class IngredientTest < MiniTest::Test
   def test_should_be_initialized_with_name_and_quantities
