@@ -9,5 +9,9 @@ module MealPlanner
     def add_ingredient(ingredient)
       @ingredients << ingredient
     end
+
+    def ==(another_meal)
+      ingredients.difference(another_meal.ingredients).none?
+    end
   end
 end
