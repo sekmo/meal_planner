@@ -1,17 +1,14 @@
 module MealPlanner
   class Meal
-    attr_reader :ingredients
+    attr_accessor :carb, :protein
 
-    def initialize
-      @ingredients = []
-    end
-
-    def add_ingredient(ingredient)
-      @ingredients << ingredient
+    def initialize(carb: nil, protein: nil)
+      @carb = carb
+      @protein = protein
     end
 
     def ==(another_meal)
-      ingredients.difference(another_meal.ingredients).none?
+      carb == another_meal.carb && protein == another_meal.protein
     end
   end
 end
