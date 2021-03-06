@@ -23,4 +23,4 @@ An **Ingredient** (e.g. bread, kale, potatoes) has a **Type** and a **Category**
 - Chicken, Bread, Lettuce
 
 ## Features
-- [ ] Doesn't repeat the same Meal in a plan
+- [X] Doesn't repeat the same Meal in a plan
