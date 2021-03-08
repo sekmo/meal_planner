@@ -1,5 +1,24 @@
 module MealPlanner
   class IngredientBook
+    MAX_WEEKLY_INGREDIENT_FREQUENCY = [
+      {
+        ingredient: "Pork",
+        times: 1
+      },
+      {
+        ingredient: "Eggs",
+        times: 3
+      },
+      {
+        ingredient: "Barley",
+        times: 1
+      },
+      {
+        ingredient: "Spelt",
+        times: 1
+      }
+    ]
+
     INGREDIENTS = [
       {
         id: 1,
@@ -133,12 +152,30 @@ module MealPlanner
         end
     end
 
-    def self.sample_carb
-      carbs.sample
+    def self.sample_carb(current_meals)
+      carbs_that_we_can_add_respecting_the_weekly_frequency = carbs.select do |carb|
+        max_frequency_for_carb = MAX_WEEKLY_INGREDIENT_FREQUENCY.find { |rule| rule[:ingredient] == carb.name}&.fetch(:times)
+        !max_frequency_for_carb || carbs_in_our_current_meals(current_meals).count(carb) < max_frequency_for_carb
+      end
+
+      carbs_that_we_can_add_respecting_the_weekly_frequency.sample
     end
 
-    def self.sample_protein
-      proteins.sample
+    def self.sample_protein(current_meals)
+      proteins_that_we_can_add_respecting_the_weekly_frequency = proteins.select do |protein|
+        max_frequency_for_protein = MAX_WEEKLY_INGREDIENT_FREQUENCY.find { |rule| rule[:ingredient] == protein.name}&.fetch(:times)
+        !max_frequency_for_protein || proteins_in_our_current_meals(current_meals).count(protein) < max_frequency_for_protein
+      end
+
+      proteins_that_we_can_add_respecting_the_weekly_frequency.sample
+    end
+
+    def self.carbs_in_our_current_meals(current_meals)
+      current_meals.map(&:carb)
+    end
+
+    def self.proteins_in_our_current_meals(current_meals)
+      current_meals.map(&:protein)
     end
   end
 end
