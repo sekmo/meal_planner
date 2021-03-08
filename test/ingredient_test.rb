@@ -9,4 +9,11 @@ class IngredientTest < MiniTest::Test
     assert_equal(80, ingredient.quantity_for_dinner)
     assert_equal("protein", ingredient.kind)
   end
+
+  def test_two_ingredients_with_the_same_name_should_be_considered_equal
+    assert_equal(
+      MealPlanner::Ingredient.new(name: "Eggs", kind: "protein"),
+      MealPlanner::Ingredient.new(name: "Eggs", kind: "whatever"),
+    )
+  end
 end
