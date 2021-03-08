@@ -3,14 +3,9 @@ module MealPlanner
     def self.generate_plan
       current_meals = []
       14.times do
-        meal = nil
-        loop do
-          # TODO we should inject a IngredientBook (initialized with ingredients and rules)
-          # to the MealGenerator (and maybe rename it to IngredientSampler?)
-          meal = MealGenerator.generate(current_meals)
-          break if !current_meals.include?(meal)
-        end
-        current_meals << meal
+        # TODO we should inject a IngredientBook (initialized with ingredients and rules)
+        # to the MealGenerator (and maybe rename it to IngredientSampler?)
+        current_meals << MealGenerator.generate(current_meals)
       end
       current_meals
     end
