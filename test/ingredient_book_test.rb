@@ -2,22 +2,29 @@ require "minitest/autorun"
 require_relative "test_helper"
 
 class IngredientBookTest < MiniTest::Test
+  def setup
+    @ingredient_book = MealPlanner::IngredientBook.new(
+      MealPlanner::INGREDIENTS,
+      MealPlanner::RULE_MAX_WEEKLY_INGREDIENT_FREQUENCY
+    )
+  end
+
   def test_sample_carb_should_return_a_random_carb
     current_meals = []
     1_000.times do
-      assert_equal("carb", MealPlanner::IngredientBook.sample_carb(current_meals).kind)
+      assert_equal("carb", @ingredient_book.sample_carb(current_meals).kind)
     end
   end
 
   def test_sample_protein_should_return_a_random_protein
     current_meals = []
     1_000.times do
-      assert_equal("protein", MealPlanner::IngredientBook.sample_protein(current_meals).kind)
+      assert_equal("protein", @ingredient_book.sample_protein(current_meals).kind)
     end
   end
 
   def test_sample_protein_should_not_return_a_carb_that_has_reached_the_weekly_limit
-    # at the moment we have the weekly frequency hardcoded in the IngredientBook
+    # at the moment we have the weekly frequency hardcoded
     # and Eggs have a weekly max frequency = 3
 
     current_meals = [
@@ -36,7 +43,7 @@ class IngredientBookTest < MiniTest::Test
     ]
 
     1_000.times do
-      refute_equal("Eggs", MealPlanner::IngredientBook.sample_protein(current_meals).name)
+      refute_equal("Eggs", @ingredient_book.sample_protein(current_meals).name)
     end
   end
 
@@ -52,7 +59,7 @@ class IngredientBookTest < MiniTest::Test
     ]
 
     1_000.times do
-      refute_equal("Barley", MealPlanner::IngredientBook.sample_carb(current_meals).name)
+      refute_equal("Barley", @ingredient_book.sample_carb(current_meals).name)
     end
   end
 end

@@ -1,11 +1,10 @@
 module MealPlanner
   class Planner
     def self.generate_plan
+      ingredient_book = IngredientBook.new(INGREDIENTS, RULE_MAX_WEEKLY_INGREDIENT_FREQUENCY)
       current_meals = []
       14.times do
-        # TODO we should inject a IngredientBook (initialized with ingredients and rules)
-        # to the MealGenerator (and maybe rename it to IngredientSampler?)
-        current_meals << MealGenerator.generate(current_meals)
+        current_meals << MealGenerator.generate(current_meals, ingredient_book)
       end
       current_meals
     end
