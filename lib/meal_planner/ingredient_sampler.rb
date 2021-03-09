@@ -1,5 +1,7 @@
+# Responsible for yielding the possible ingredients for a new meal, given that we pass all the
+# available ingredients, some rules, and the meals we currently have in our weekly plan.
 module MealPlanner
-  class IngredientBook
+  class IngredientSampler
     attr_reader :ingredients, :max_weekly_ingredient_frequency
     def initialize(ingredients, max_weekly_ingredient_frequency)
       @ingredients = ingredients
@@ -49,6 +51,8 @@ module MealPlanner
 
       proteins_that_we_can_add_respecting_the_weekly_frequency.sample
     end
+
+    private
 
     def carbs_in_our_current_meals(current_meals)
       current_meals.map(&:carb)
