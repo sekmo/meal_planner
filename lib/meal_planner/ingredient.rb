@@ -9,7 +9,7 @@ module MealPlanner
     end
 
     def ==(other_ingredient)
-      name == other_ingredient.name
+      name.downcase == other_ingredient.name.downcase
     end
   end
 end
