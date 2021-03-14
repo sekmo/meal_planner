@@ -1,14 +1,14 @@
 require "minitest/autorun"
 require_relative "test_helper"
 
-class MealPlanner::MealGeneratorTest < MiniTest::Test
+class MealPlanner::MealSamplerTest < MiniTest::Test
   def test_it_should_generate_a_meal_with_a_carb_and_a_protein
     current_meals = []
     ingredient_sampler = MealPlanner::IngredientSampler.new(
       MealPlanner::INGREDIENTS,
       MealPlanner::RULE_MAX_WEEKLY_INGREDIENT_FREQUENCY
     )
-    returned_meal = MealPlanner::MealGenerator.generate(current_meals, ingredient_sampler)
+    returned_meal = MealPlanner::MealSampler.generate(current_meals, ingredient_sampler)
     assert_instance_of(MealPlanner::Ingredient, returned_meal.protein)
     assert_instance_of(MealPlanner::Ingredient, returned_meal.carb)
   end
@@ -27,7 +27,7 @@ class MealPlanner::MealGeneratorTest < MiniTest::Test
     1_000.times do
       refute_equal(
         salmon_with_eggs,
-        MealPlanner::MealGenerator.generate(current_meals, ingredient_sampler)
+        MealPlanner::MealSampler.generate(current_meals, ingredient_sampler)
       )
     end
   end

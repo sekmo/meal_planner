@@ -4,7 +4,7 @@ module MealPlanner
       ingredient_sampler = IngredientSampler.new(INGREDIENTS, RULE_MAX_WEEKLY_INGREDIENT_FREQUENCY)
       current_meals = []
       14.times do
-        current_meals << MealGenerator.generate(current_meals, ingredient_sampler)
+        current_meals << MealSampler.generate(current_meals, ingredient_sampler)
       end
       current_meals
     end

@@ -1,6 +1,7 @@
-# It creates unique meals with a carb and a protein, different from the ones being passed
+# It returns unique meals with a carb and a protein, different from the ones
+# being passed as input
 module MealPlanner
-  class MealGenerator
+  class MealSampler
     def self.generate(current_meals, ingredient_sampler)
       loop do
         meal = Meal.new(
