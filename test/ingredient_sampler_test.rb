@@ -9,21 +9,21 @@ class IngredientSamplerTest < MiniTest::Test
     )
   end
 
-  def test_sample_carb_should_return_a_random_carb
+  def test_sample_should_return_a_random_carb
     current_meals = []
     1_000.times do
-      assert_equal("carb", @ingredient_sampler.sample_carb(current_meals).kind)
+      assert_equal("carb", @ingredient_sampler.sample(:carb, current_meals).kind)
     end
   end
 
-  def test_sample_protein_should_return_a_random_protein
+  def test_sample_should_return_a_random_protein
     current_meals = []
     1_000.times do
-      assert_equal("protein", @ingredient_sampler.sample_protein(current_meals).kind)
+      assert_equal("protein", @ingredient_sampler.sample(:protein, current_meals).kind)
     end
   end
 
-  def test_sample_protein_should_not_return_a_carb_that_has_reached_the_weekly_limit
+  def test_sample_should_not_return_an_ingredient_that_has_reached_the_weekly_limit
     # at the moment we have the weekly frequency hardcoded
     # and Eggs have a weekly max frequency = 3
 
@@ -43,11 +43,11 @@ class IngredientSamplerTest < MiniTest::Test
     ]
 
     1_000.times do
-      refute_equal("Eggs", @ingredient_sampler.sample_protein(current_meals).name)
+      refute_equal("Eggs", @ingredient_sampler.sample(:protein, current_meals).name)
     end
   end
 
-  def test_sample_carb_should_not_return_a_carb_that_has_reached_the_weekly_limit
+  def test_sample_should_not_return_a_carb_that_has_reached_the_weekly_limit
     # at the moment we have the weekly frequency hardcoded in the IngredientSampler
     # and Barley have a weekly max frequency = 1
 
@@ -59,7 +59,7 @@ class IngredientSamplerTest < MiniTest::Test
     ]
 
     1_000.times do
-      refute_equal("Barley", @ingredient_sampler.sample_carb(current_meals).name)
+      refute_equal("Barley", @ingredient_sampler.sample(:carb, current_meals).name)
     end
   end
 end

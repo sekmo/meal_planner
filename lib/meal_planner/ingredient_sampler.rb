@@ -34,22 +34,22 @@ module MealPlanner
         end
     end
 
-    def sample_carb(current_meals)
-      carbs_that_we_can_add_respecting_the_weekly_frequency = carbs.select do |carb|
-        max_frequency_for_carb = max_weekly_ingredient_frequency.find { |rule| rule[:ingredient] == carb.name}&.fetch(:times)
-        !max_frequency_for_carb || carbs_in_our_current_meals(current_meals).count(carb) < max_frequency_for_carb
+    def sample(ingredient_kind, current_meals)
+      if ingredient_kind == :carb
+        carbs_that_we_can_add_respecting_the_weekly_frequency = carbs.select do |carb|
+          max_frequency_for_carb = max_weekly_ingredient_frequency.find { |rule| rule[:ingredient] == carb.name}&.fetch(:times)
+          !max_frequency_for_carb || carbs_in_our_current_meals(current_meals).count(carb) < max_frequency_for_carb
+        end
+
+        carbs_that_we_can_add_respecting_the_weekly_frequency.sample
+      else
+        proteins_that_we_can_add_respecting_the_weekly_frequency = proteins.select do |protein|
+          max_frequency_for_protein = max_weekly_ingredient_frequency.find { |rule| rule[:ingredient] == protein.name}&.fetch(:times)
+          !max_frequency_for_protein || proteins_in_our_current_meals(current_meals).count(protein) < max_frequency_for_protein
+        end
+
+        proteins_that_we_can_add_respecting_the_weekly_frequency.sample
       end
-
-      carbs_that_we_can_add_respecting_the_weekly_frequency.sample
-    end
-
-    def sample_protein(current_meals)
-      proteins_that_we_can_add_respecting_the_weekly_frequency = proteins.select do |protein|
-        max_frequency_for_protein = max_weekly_ingredient_frequency.find { |rule| rule[:ingredient] == protein.name}&.fetch(:times)
-        !max_frequency_for_protein || proteins_in_our_current_meals(current_meals).count(protein) < max_frequency_for_protein
-      end
-
-      proteins_that_we_can_add_respecting_the_weekly_frequency.sample
     end
 
     private

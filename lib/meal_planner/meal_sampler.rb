@@ -5,8 +5,8 @@ module MealPlanner
     def self.generate(current_meals, ingredient_sampler)
       loop do
         meal = Meal.new(
-          carb: ingredient_sampler.sample_carb(current_meals),
-          protein: ingredient_sampler.sample_protein(current_meals)
+          carb: ingredient_sampler.sample(:carb, current_meals),
+          protein: ingredient_sampler.sample(:protein, current_meals)
         )
         return meal if !current_meals.include?(meal)
       end
