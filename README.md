@@ -23,5 +23,6 @@ An **Ingredient** (e.g. bread, kale, potatoes) has a **Type** and a **Category**
 - Chicken, Bread, Lettuce
 
 ## Features
-- [X] Doesn't repeat the same Meal in a plan
-- [X] Ingredients maximum weekly frequency (*e.g. pork max 1x /week*)
+- [x] Doesn't repeat the same Meal in a plan
+- [x] Ingredients maximum weekly frequency (*e.g. pork max 1x /week*)
+- [x] Allow the same ingredient maximum once in 3 consecutive meals (allow same meal again only after 2 meals)

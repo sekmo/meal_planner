@@ -11,5 +11,9 @@ module MealPlanner
     def ==(other_ingredient)
       name.downcase == other_ingredient.name.downcase
     end
+
+    def eql?(other_ingredient)
+      self == other_ingredient
+    end
   end
 end
