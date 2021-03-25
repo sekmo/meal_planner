@@ -1,6 +1,12 @@
 module MealPlanner
   class Planner
-    def self.generate_plan(ingredients, max_weekly_frequency_ingredient)
+    attr_reader :ingredients, :max_weekly_frequency_ingredient
+    def initialize(ingredients, max_weekly_frequency_ingredient)
+      @ingredients = ingredients
+      @max_weekly_frequency_ingredient = max_weekly_frequency_ingredient
+    end
+
+    def generate_plan
       ingredient_sampler = IngredientSampler.new(ingredients, max_weekly_frequency_ingredient)
       current_meals = []
       14.times do
