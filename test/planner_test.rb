@@ -6,8 +6,10 @@ class PlannerTest < MiniTest::Test
     ingredients = JSON.parse(File.read("conf/ingredients.json"), symbolize_names: true)
     max_weekly_ingredient_frequency_rule = JSON.parse(File.read("conf/ingredients.json"), symbolize_names: true)
     planner = MealPlanner::Planner.new(ingredients, max_weekly_ingredient_frequency_rule)
+    planner.generate_plan
+    planner.print
 
-    generated_meals = planner.generate_plan
+    generated_meals = planner.meals
     generated_meals.each do |meal|
       refute generated_meals.count(meal) > 1
     end
