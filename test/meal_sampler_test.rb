@@ -12,11 +12,12 @@ class MealPlanner::MealSamplerTest < MiniTest::Test
     )
   end
 
-  def test_it_should_generate_a_meal_with_a_carb_and_a_protein
+  def test_it_should_generate_a_meal_with_a_carb_a_protein_and_a_veggie
     current_meals = []
     returned_meal = MealPlanner::MealSampler.generate(current_meals, @ingredient_sampler)
     assert_instance_of(MealPlanner::Ingredient, returned_meal.protein)
     assert_instance_of(MealPlanner::Ingredient, returned_meal.carb)
+    assert_instance_of(MealPlanner::Ingredient, returned_meal.veggie)
   end
 
   def test_it_should_generate_a_meal_different_from_the_ones_passed

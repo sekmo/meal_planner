@@ -1,105 +1,145 @@
 [
   {
-    "id": 1,
-    "kind": "carb",
     "name": "Bread",
-    "category": "grain",
+    "kind": "carb",
     "quantity_for_lunch": 30,
     "quantity_for_dinner": 80
   },
   {
-    "id": 2,
-    "kind": "carb",
     "name": "Potatoes",
-    "category": "veggie",
+    "kind": "carb",
     "quantity_for_lunch": 100,
     "quantity_for_dinner": 200
   },
   {
-    "id": 3,
-    "kind": "carb",
     "name": "Rice",
-    "category": "grain",
+    "kind": "carb",
     "quantity_for_lunch": 30,
     "quantity_for_dinner": 80
   },
   {
-    "id": 4,
-    "kind": "carb",
     "name": "Couscous",
-    "category": "grain",
+    "kind": "carb",
     "quantity_for_lunch": 30,
     "quantity_for_dinner": 80
   },
   {
-    "id": 5,
-    "kind": "carb",
     "name": "Quinoa",
-    "category": "grain",
+    "kind": "carb",
     "quantity_for_lunch": 0,
     "quantity_for_dinner": 60
   },
   {
-    "id": 6,
-    "kind": "carb",
     "name": "Barley",
-    "category": "grain",
-    "quantity_for_lunch": 0,
-    "quantity_for_dinner": 80
-  },
-  {
-    "id": 7,
     "kind": "carb",
-    "name": "Spelt",
-    "category": "grain",
     "quantity_for_lunch": 0,
     "quantity_for_dinner": 80
   },
   {
-    "id": 8,
-    "kind": "protein",
+    "name": "Spelt",
+    "kind": "carb",
+    "quantity_for_lunch": 0,
+    "quantity_for_dinner": 80
+  },
+  {
     "name": "Chicken",
-    "category": "meat",
+    "kind": "protein",
     "quantity_for_lunch": 180,
     "quantity_for_dinner": 100
   },
   {
-    "id": 9,
-    "kind": "protein",
     "name": "Pork",
-    "category": "meat",
+    "kind": "protein",
     "quantity_for_lunch": 100,
     "quantity_for_dinner": 150
   },
   {
-    "id": 10,
-    "kind": "protein",
     "name": "Eggs",
-    "category": "eggs",
+    "kind": "protein",
     "quantity_for_lunch": 120,
     "quantity_for_dinner": 68
   },
   {
-    "id": 11,
-    "kind": "protein",
     "name": "Salmon",
-    "category": "fish",
+    "kind": "protein",
     "quantity_for_lunch": 140,
     "quantity_for_dinner": 80
   },
   {
-    "id": 12,
-    "kind": "protein",
     "name": "Pangasius",
-    "category": "fish",
+    "kind": "protein",
     "quantity_for_lunch": 200,
     "quantity_for_dinner": 120
   },
   {
-    "id": 13,
-    "kind": "protein",
     "name": "Cottage cheese",
-    "category": "dairy",
+    "kind": "protein",
+    "quantity_for_lunch": 57,
+    "quantity_for_dinner": 100
+  },
+  {
+    "name": "Lettuce",
+    "kind": "veggie",
+    "quantity_for_lunch": 57,
+    "quantity_for_dinner": 100
+  },
+  {
+    "name": "Green beans",
+    "kind": "veggie",
+    "quantity_for_lunch": 57,
+    "quantity_for_dinner": 100
+  },
+  {
+    "name": "Peas",
+    "kind": "veggie",
+    "quantity_for_lunch": 57,
+    "quantity_for_dinner": 100
+  },
+  {
+    "name": "Spinach",
+    "kind": "veggie",
+    "quantity_for_lunch": 57,
+    "quantity_for_dinner": 100
+  },
+  {
+    "name": "Chard",
+    "kind": "veggie",
+    "quantity_for_lunch": 57,
+    "quantity_for_dinner": 100
+  },
+  {
+    "name": "Carrots",
+    "kind": "veggie",
+    "quantity_for_lunch": 57,
+    "quantity_for_dinner": 100
+  },
+  {
+    "name": "Kale",
+    "kind": "veggie",
+    "quantity_for_lunch": 57,
+    "quantity_for_dinner": 100
+  },
+  {
+    "name": "Tomatoes",
+    "kind": "veggie",
+    "quantity_for_lunch": 57,
+    "quantity_for_dinner": 100
+  },
+  {
+    "name": "Zucchine",
+    "kind": "veggie",
+    "quantity_for_lunch": 57,
+    "quantity_for_dinner": 100
+  },
+  {
+    "name": "Mushrooms",
+    "kind": "veggie",
+    "quantity_for_lunch": 57,
+    "quantity_for_dinner": 100
+  },
+  {
+    "name": "Pumpkin",
+    "kind": "veggie",
     "quantity_for_lunch": 57,
     "quantity_for_dinner": 100
   }

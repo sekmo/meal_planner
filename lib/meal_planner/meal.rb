@@ -1,14 +1,15 @@
 module MealPlanner
   class Meal
-    attr_accessor :carb, :protein
+    attr_accessor :carb, :protein, :veggie
 
-    def initialize(carb: nil, protein: nil)
+    def initialize(carb: nil, protein: nil, veggie: nil)
       @carb = carb
       @protein = protein
+      @veggie = veggie
     end
 
     def ==(another_meal)
-      carb == another_meal.carb && protein == another_meal.protein
+      carb == another_meal.carb && protein == another_meal.protein &&  veggie == another_meal.veggie
     end
 
     def to_menu_item(lunch_or_dinner)

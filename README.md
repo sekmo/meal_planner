@@ -3,7 +3,7 @@ Plan your meals for the whole week
 
 ## Description
 
-I would like to generate a meal plan for the whole week, starting from a list of ingredients, showing the right amount of meat, vegetables, and carbs for every meal depending if lunch or dinner. Also following certain rules like having pork max once per weeek, or not plan the same ingredient 2 times consecutively.
+I would like to generate a meal plan for the whole week, starting from a list of ingredients, showing the right amount of meat, veggies, and carbs for every meal depending if lunch or dinner. Also following certain rules like having pork max once per weeek, or not plan the same ingredient 2 times consecutively.
 
 ### Domain
 In our weekly meal plan we have 14 **Meals** (1 lunch meal and 1 dinner meal for 7 days).
