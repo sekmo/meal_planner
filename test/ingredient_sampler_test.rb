@@ -27,8 +27,7 @@ class IngredientSamplerTest < MiniTest::Test
   end
 
   def test_sample_should_not_return_a_protein_that_has_reached_the_weekly_limit
-    # at the moment we have the weekly frequency hardcoded
-    # and Eggs have a weekly max frequency = 3
+    # Eggs have a weekly max frequency = 2 in the fixture
 
     current_meals = [
       MealPlanner::Meal.new(
@@ -57,7 +56,7 @@ class IngredientSamplerTest < MiniTest::Test
       ),
       MealPlanner::Meal.new(
         carb: MealPlanner::Ingredient.new(name: "Quinoa", kind: "carb"),
-        protein: MealPlanner::Ingredient.new(name: "Eggs", kind: "protein"),
+        protein: MealPlanner::Ingredient.new(name: "Pork", kind: "protein"),
       ),
     ]
 
@@ -89,8 +88,7 @@ class IngredientSamplerTest < MiniTest::Test
   end
 
   def test_sample_should_not_return_a_carb_that_has_reached_the_weekly_limit
-    # at the moment we have the weekly frequency hardcoded in the IngredientSampler
-    # and Barley have a weekly max frequency = 1
+    # Barley have a weekly max frequency = 1 in the fixture
 
     current_meals = [
       MealPlanner::Meal.new(
