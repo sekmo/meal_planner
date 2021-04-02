@@ -3,8 +3,8 @@ require_relative "test_helper"
 
 class IngredientSamplerTest < MiniTest::Test
   def setup
-    ingredients = JSON.parse(File.read("conf/ingredients.json"), symbolize_names: true)
-    max_weekly_ingredient_frequency_rule = JSON.parse(File.read("conf/ingredients.json"), symbolize_names: true)
+    ingredients = JSON.parse(read_fixture("conf/ingredients.json"), symbolize_names: true)
+    max_weekly_ingredient_frequency_rule = JSON.parse(read_fixture("conf/max_weekly_ingredient_frequency_rule.json"), symbolize_names: true)
 
     @ingredient_sampler = MealPlanner::IngredientSampler.new(
       ingredients,
