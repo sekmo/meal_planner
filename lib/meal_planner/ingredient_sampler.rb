@@ -2,24 +2,10 @@
 # available ingredients, some rules, and the meals we currently have in our weekly plan.
 module MealPlanner
   class IngredientSampler
-    attr_reader :ingredients, :max_weekly_ingredient_frequency, :all_ingredients_by_kind
-    def initialize(ingredients, max_weekly_ingredient_frequency)
-      @ingredients = ingredients
+    attr_reader :ingredients_book, :max_weekly_ingredient_frequency
+    def initialize(ingredients_book, max_weekly_ingredient_frequency)
       @max_weekly_ingredient_frequency = max_weekly_ingredient_frequency
-      
-      @all_ingredients_by_kind = {}
-      [:carb, :protein, :veggie].each do |kind|
-        @all_ingredients_by_kind[kind] = ingredients
-        .filter { |ingredient| ingredient[:kind] == kind.to_s }
-        .map do |ingredient|
-          Ingredient.new(
-            name: ingredient[:name],
-            kind: ingredient[:kind],
-            quantity_for_lunch: ingredient[:quantity_for_lunch],
-            quantity_for_dinner: ingredient[:quantity_for_dinner]
-          )
-        end
-      end
+      @ingredients_book = ingredients_book
     end
 
     def sample(ingredient_kind, current_meals)
@@ -42,21 +28,21 @@ module MealPlanner
     end
 
     def carbs_that_respect_the_weekly_frequency_rule(current_meals)
-      all_ingredients_by_kind[:carb].select do |carb|
+      ingredients_book.carbs.select do |carb|
         max_frequency_for_carb = max_weekly_ingredient_frequency.find { |rule| rule[:ingredient] == carb.name}&.fetch(:times)
         !max_frequency_for_carb || ingredients_in_our_current_meals_by_kind(:carb, current_meals).count(carb) < max_frequency_for_carb
       end
     end
 
     def proteins_that_respect_the_weekly_frequency_rule(current_meals)
-      all_ingredients_by_kind[:protein].select do |protein|
+      ingredients_book.proteins.select do |protein|
         max_frequency_for_protein = max_weekly_ingredient_frequency.find { |rule| rule[:ingredient] == protein.name}&.fetch(:times)
         !max_frequency_for_protein || ingredients_in_our_current_meals_by_kind(:protein, current_meals).count(protein) < max_frequency_for_protein
       end
     end
 
     def veggies_that_respect_the_weekly_frequency_rule(current_meals)
-      all_ingredients_by_kind[:veggie].select do |veggie|
+      ingredients_book.veggies.select do |veggie|
         max_frequency_for_veggie = max_weekly_ingredient_frequency.find { |rule| rule[:ingredient] == veggie.name}&.fetch(:times)
         !max_frequency_for_veggie || ingredients_in_our_current_meals_by_kind(:veggie, current_meals).count(veggie) < max_frequency_for_veggie
       end
@@ -75,15 +61,15 @@ module MealPlanner
     end
 
     def carbs_that_respect_the_last_2_meals_rule(current_meals)
-      all_ingredients_by_kind[:carb] - carbs_in_our_last_2_meals(current_meals)
+      ingredients_book.carbs - carbs_in_our_last_2_meals(current_meals)
     end
 
     def proteins_that_respect_the_last_2_meals_rule(current_meals)
-      all_ingredients_by_kind[:protein] - proteins_in_our_last_2_meals(current_meals)
+      ingredients_book.proteins - proteins_in_our_last_2_meals(current_meals)
     end
 
     def veggies_that_respect_the_last_2_meals_rule(current_meals)
-      all_ingredients_by_kind[:veggie] - veggies_in_our_last_2_meals(current_meals)
+      ingredients_book.veggies - veggies_in_our_last_2_meals(current_meals)
     end
   end
 end
