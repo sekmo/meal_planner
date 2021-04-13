@@ -1,34 +1,35 @@
 module MealPlanner
   class Planner
-    attr_reader :ingredients, :max_weekly_frequency_ingredient
+    MENU_CHARS_LENGTH = 55
+    DAYS_NAMES = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
+    attr_reader :ingredient_book, :max_weekly_frequency_ingredient
     attr_accessor :meals
-    def initialize(ingredients, max_weekly_frequency_ingredient)
-      @ingredients = ingredients
+    
+    def initialize(ingredient_book, max_weekly_frequency_ingredient)
+      @ingredient_book = ingredient_book
       @max_weekly_frequency_ingredient = max_weekly_frequency_ingredient
       @meals = []
     end
 
     def generate_plan
-      ingredient_sampler = IngredientSampler.new(ingredients, max_weekly_frequency_ingredient)
+      ingredient_sampler = IngredientSampler.new(ingredient_book, max_weekly_frequency_ingredient)
       14.times do
         meals << MealSampler.generate(meals, ingredient_sampler)
       end
     end
 
     def print
-      menu_chars_length = 55
       puts
-      puts "WEEKLY PLAN".center(menu_chars_length)
-      puts "=" * menu_chars_length
-
-      days_names = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+      puts "WEEKLY PLAN".center(MENU_CHARS_LENGTH)
+      puts "=" * MENU_CHARS_LENGTH
       meals.each_slice(2).with_index do |meals_for_the_day, index|
-        puts "#{days_names[index]} lunch: #{meals_for_the_day[0].to_menu_item(:lunch)}"
-        puts "#{days_names[index]} dinner: #{meals_for_the_day[1].to_menu_item(:dinner)}"
+        puts "#{DAYS_NAMES[index]} lunch: #{meals_for_the_day[0].to_menu_item(:lunch)}"
+        puts "#{DAYS_NAMES[index]} dinner: #{meals_for_the_day[1].to_menu_item(:dinner)}"
         # puts "- dinner: #{meals_for_the_day[1].to_menu_item(:dinner)}"
         puts
       end
-      puts "=" * menu_chars_length
+      puts "=" * MENU_CHARS_LENGTH
     end
   end
 end
