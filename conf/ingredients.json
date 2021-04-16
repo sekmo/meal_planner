@@ -3,144 +3,180 @@
     "name": "Bread",
     "kind": "carb",
     "quantity_for_lunch": 30,
-    "quantity_for_dinner": 80
+    "quantity_for_dinner": 30,
+    "quantity_for_proteinfree_dinner": 60
   },
   {
     "name": "Potatoes",
     "kind": "carb",
     "quantity_for_lunch": 100,
-    "quantity_for_dinner": 200
+    "quantity_for_dinner": 100,
+    "quantity_for_proteinfree_dinner": 200
   },
   {
     "name": "Rice",
     "kind": "carb",
     "quantity_for_lunch": 30,
-    "quantity_for_dinner": 80
+    "quantity_for_dinner": 30,
+    "quantity_for_proteinfree_dinner": 100
   },
   {
     "name": "Couscous",
     "kind": "carb",
-    "quantity_for_lunch": 30,
-    "quantity_for_dinner": 80
+    "quantity_for_lunch": 40,
+    "quantity_for_dinner": 40,
+    "quantity_for_proteinfree_dinner": 60
   },
   {
     "name": "Quinoa",
     "kind": "carb",
-    "quantity_for_lunch": 0,
-    "quantity_for_dinner": 60
+    "quantity_for_lunch": 40,
+    "quantity_for_dinner": 40,
+    "quantity_for_proteinfree_dinner": 80
   },
   {
     "name": "Barley",
     "kind": "carb",
-    "quantity_for_lunch": 0,
-    "quantity_for_dinner": 80
+    "quantity_for_lunch": 30,
+    "quantity_for_dinner": 30,
+    "quantity_for_proteinfree_dinner": 100
   },
   {
     "name": "Spelt",
     "kind": "carb",
-    "quantity_for_lunch": 0,
-    "quantity_for_dinner": 80
+    "quantity_for_lunch": 30,
+    "quantity_for_dinner": 30,
+    "quantity_for_proteinfree_dinner": 100
   },
   {
     "name": "Chicken",
     "kind": "protein",
     "quantity_for_lunch": 180,
-    "quantity_for_dinner": 100
+    "quantity_for_dinner": 180
   },
   {
     "name": "Pork",
     "kind": "protein",
-    "quantity_for_lunch": 100,
-    "quantity_for_dinner": 150
+    "quantity_for_lunch": 180,
+    "quantity_for_dinner": 180
   },
   {
     "name": "Eggs",
     "kind": "protein",
     "quantity_for_lunch": 120,
-    "quantity_for_dinner": 68
+    "quantity_for_dinner": 120
   },
   {
     "name": "Salmon",
     "kind": "protein",
     "quantity_for_lunch": 140,
-    "quantity_for_dinner": 80
+    "quantity_for_dinner": 140
   },
   {
-    "name": "Pangasius",
+    "name": "Tuna",
     "kind": "protein",
-    "quantity_for_lunch": 200,
+    "quantity_for_lunch": 150,
+    "quantity_for_dinner": 150
+  },
+  {
+    "name": "Seafood",
+    "kind": "protein",
+    "quantity_for_lunch": 150,
+    "quantity_for_dinner": 150
+  },
+  {
+    "name": "Sardine",
+    "kind": "protein",
+    "quantity_for_lunch": 120,
+    "quantity_for_dinner": 120
+  },
+  {
+    "name": "Mackerel",
+    "kind": "protein",
+    "quantity_for_lunch": 120,
     "quantity_for_dinner": 120
   },
   {
     "name": "Cottage cheese",
     "kind": "protein",
-    "quantity_for_lunch": 57,
-    "quantity_for_dinner": 100
+    "quantity_for_lunch": 180,
+    "quantity_for_dinner": 180
   },
   {
     "name": "Lettuce",
     "kind": "veggie",
-    "quantity_for_lunch": 57,
-    "quantity_for_dinner": 100
+    "quantity_for_lunch": 300,
+    "quantity_for_dinner": 300,
+    "quantity_for_proteinfree_dinner": 300
   },
   {
     "name": "Green beans",
     "kind": "veggie",
-    "quantity_for_lunch": 57,
-    "quantity_for_dinner": 100
+    "quantity_for_lunch": 200,
+    "quantity_for_dinner": 200,
+    "quantity_for_proteinfree_dinner": 200
   },
   {
     "name": "Peas",
     "kind": "veggie",
-    "quantity_for_lunch": 57,
-    "quantity_for_dinner": 100
+    "quantity_for_lunch": 100,
+    "quantity_for_dinner": 100,
+    "quantity_for_proteinfree_dinner": 100
   },
   {
     "name": "Spinach",
     "kind": "veggie",
-    "quantity_for_lunch": 57,
-    "quantity_for_dinner": 100
+    "quantity_for_lunch": 300,
+    "quantity_for_dinner": 300,
+    "quantity_for_proteinfree_dinner": 300
   },
   {
     "name": "Chard",
     "kind": "veggie",
-    "quantity_for_lunch": 57,
-    "quantity_for_dinner": 100
+    "quantity_for_lunch": 300,
+    "quantity_for_dinner": 300,
+    "quantity_for_proteinfree_dinner": 300
   },
   {
     "name": "Carrots",
     "kind": "veggie",
-    "quantity_for_lunch": 57,
-    "quantity_for_dinner": 100
+    "quantity_for_lunch": 80,
+    "quantity_for_dinner": 80,
+    "quantity_for_proteinfree_dinner": 80
   },
   {
     "name": "Kale",
     "kind": "veggie",
-    "quantity_for_lunch": 57,
-    "quantity_for_dinner": 100
+    "quantity_for_lunch": 200,
+    "quantity_for_dinner": 200,
+    "quantity_for_proteinfree_dinner": 200
   },
   {
     "name": "Tomatoes",
     "kind": "veggie",
-    "quantity_for_lunch": 57,
-    "quantity_for_dinner": 100
+    "quantity_for_lunch": 150,
+    "quantity_for_dinner": 150,
+    "quantity_for_proteinfree_dinner": 150
   },
   {
-    "name": "Zucchine",
+    "name": "Zucchini",
     "kind": "veggie",
-    "quantity_for_lunch": 57,
-    "quantity_for_dinner": 100
+    "quantity_for_lunch": 150,
+    "quantity_for_dinner": 150,
+    "quantity_for_proteinfree_dinner": 150
   },
   {
     "name": "Mushrooms",
     "kind": "veggie",
-    "quantity_for_lunch": 57,
-    "quantity_for_dinner": 100
+    "quantity_for_lunch": 200,
+    "quantity_for_dinner": 200,
+    "quantity_for_proteinfree_dinner": 200
   },
   {
     "name": "Pumpkin",
     "kind": "veggie",
-    "quantity_for_lunch": 57,
-    "quantity_for_dinner": 100
+    "quantity_for_lunch": 200,
+    "quantity_for_dinner": 200,
+    "quantity_for_proteinfree_dinner": 200
   }
 ]
