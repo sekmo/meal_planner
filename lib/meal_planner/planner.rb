@@ -4,12 +4,14 @@ module MealPlanner
     DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     PROTEINFREE_DINNER_DAYS = ["Tuesday", "Thursday", "Saturday", "Sunday"]
 
-    attr_reader :ingredient_sampler
+    attr_reader :ingredient_sampler, :meal_blocklist
     attr_accessor :meals
     
-    def initialize(ingredient_book, max_weekly_frequency_ingredient)
+    def initialize(ingredient_book, max_weekly_frequency_ingredient, meal_blocklist)
+      # TODO inject the ingredient sampler when initializing
       @ingredient_sampler = IngredientSampler.new(ingredient_book, max_weekly_frequency_ingredient)
       @meals = []
+      @meal_blocklist = meal_blocklist
     end
 
     def generate_plan
@@ -23,14 +25,17 @@ module MealPlanner
       MealSampler.generate(
         meals,
         ingredient_sampler,
+        meal_blocklist,
         meal_type: :lunch
       )
     end
 
     def generate_dinner(proteinfree: false)
+      # TODO initialize the mealsampler like we do with the ingredient sampler
       MealSampler.generate(
         meals,
         ingredient_sampler,
+        meal_blocklist,
         meal_type: (proteinfree ? :proteinfree_dinner : :dinner)
       )
     end

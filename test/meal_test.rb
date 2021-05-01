@@ -45,4 +45,23 @@ class MealTest < MiniTest::Test
 
     assert_equal(meal_1, meal_2)
   end
+
+  def test_ingredient_names_should_return_the_name_of_the_ingredients
+    meal_1 = MealPlanner::Meal.new(meal_type: :lunch)
+    meal_2 = MealPlanner::Meal.new(meal_type: :dinner)
+
+    salmon = MealPlanner::Ingredient.new(name: "Salmon", kind: "protein", quantity_for_lunch: 100, quantity_for_dinner: 80)
+    bread = MealPlanner::Ingredient.new(name: "Bread", kind: "carb", quantity_for_lunch: 140, quantity_for_dinner: 90)
+    lettuce = MealPlanner::Ingredient.new(name: "Lettuce", kind: "veggie", quantity_for_lunch: 160, quantity_for_dinner: 80)
+
+    meal_1.protein = salmon
+    meal_1.veggie = lettuce
+    meal_1.carb = bread
+
+    meal_2.carb = bread
+    meal_2.protein = salmon
+
+    assert_equal(["Bread", "Lettuce", "Salmon"], meal_1.ingredient_names)
+    assert_equal(["Bread", "Salmon"], meal_2.ingredient_names)
+  end
 end

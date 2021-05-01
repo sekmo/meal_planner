@@ -51,12 +51,21 @@
   {
     "name": "Chicken",
     "kind": "protein",
+    "tags": ["meat"],
     "quantity_for_lunch": 180,
     "quantity_for_dinner": 180
   },
   {
     "name": "Pork",
     "kind": "protein",
+    "tags": ["meat"],
+    "quantity_for_lunch": 180,
+    "quantity_for_dinner": 180
+  },
+  {
+    "name": "Veal",
+    "kind": "protein",
+    "tags": ["meat"],
     "quantity_for_lunch": 180,
     "quantity_for_dinner": 180
   },
@@ -69,30 +78,35 @@
   {
     "name": "Salmon",
     "kind": "protein",
+    "tags": ["fish"],
     "quantity_for_lunch": 140,
     "quantity_for_dinner": 140
   },
   {
     "name": "Tuna",
     "kind": "protein",
+    "tags": ["fish"],
     "quantity_for_lunch": 150,
     "quantity_for_dinner": 150
   },
   {
     "name": "Seafood",
     "kind": "protein",
+    "tags": ["fish"],
     "quantity_for_lunch": 150,
     "quantity_for_dinner": 150
   },
   {
     "name": "Sardine",
     "kind": "protein",
+    "tags": ["fish"],
     "quantity_for_lunch": 120,
     "quantity_for_dinner": 120
   },
   {
     "name": "Mackerel",
     "kind": "protein",
+    "tags": ["fish"],
     "quantity_for_lunch": 120,
     "quantity_for_dinner": 120
   },

@@ -9,6 +9,10 @@ module MealPlanner
       @meal_type = meal_type
     end
 
+    def ingredient_names
+      [carb, veggie, protein].compact.map(&:name)
+    end
+
     def ==(another_meal)
       carb == another_meal.carb && protein == another_meal.protein &&  veggie == another_meal.veggie
     end

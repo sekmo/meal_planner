@@ -1,0 +1,50 @@
+[
+  [
+    {
+      "ingredient": "Bread"
+    },
+    {
+      "ingredient": "Carrots"
+    }
+  ],
+  [
+    {
+      "ingredient": "Couscous"
+    },
+    {
+      "ingredient": "Pumpkin"
+    }
+  ],
+  [
+    {
+      "ingredient": "Peas"
+    },
+    {
+      "ingredient": "Sardine"
+    }
+  ],
+  [
+    {
+      "ingredient": "Quinoa"
+    },
+    {
+      "ingredient": "Pumpkin"
+    }
+  ],
+  [
+    {
+      "ingredient": "Rice"
+    },
+    {
+      "ingredient": "Chard"
+    }
+  ],
+  [
+    {
+      "tag": "Fish"
+    },
+    {
+      "ingredient": "Carrots"
+    }
+  ]
+]
