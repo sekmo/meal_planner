@@ -33,30 +33,37 @@ class IngredientSamplerTest < MiniTest::Test
       MealPlanner::Meal.new(
         carb: MealPlanner::Ingredient.new(name: "Bread", kind: "carb"),
         protein: MealPlanner::Ingredient.new(name: "Eggs", kind: "protein"),
+        meal_type: :lunch
       ),
       MealPlanner::Meal.new(
         carb: MealPlanner::Ingredient.new(name: "Pasta", kind: "carb"),
         protein: MealPlanner::Ingredient.new(name: "Salmon", kind: "protein"),
+        meal_type: :lunch
       ),
       MealPlanner::Meal.new(
         carb: MealPlanner::Ingredient.new(name: "Quinoa", kind: "carb"),
         protein: MealPlanner::Ingredient.new(name: "Pork", kind: "protein"),
+        meal_type: :lunch
       ),
       MealPlanner::Meal.new(
         carb: MealPlanner::Ingredient.new(name: "Potatoes", kind: "carb"),
         protein: MealPlanner::Ingredient.new(name: "Eggs", kind: "protein"),
+        meal_type: :lunch
       ),
       MealPlanner::Meal.new(
         carb: MealPlanner::Ingredient.new(name: "Rice", kind: "carb"),
         protein: MealPlanner::Ingredient.new(name: "Chicken", kind: "protein"),
+        meal_type: :lunch
       ),
       MealPlanner::Meal.new(
         carb: MealPlanner::Ingredient.new(name: "Couscous", kind: "carb"),
         protein: MealPlanner::Ingredient.new(name: "Cottage cheese", kind: "protein"),
+        meal_type: :lunch
       ),
       MealPlanner::Meal.new(
         carb: MealPlanner::Ingredient.new(name: "Quinoa", kind: "carb"),
         protein: MealPlanner::Ingredient.new(name: "Pork", kind: "protein"),
+        meal_type: :lunch
       ),
     ]
 
@@ -70,14 +77,17 @@ class IngredientSamplerTest < MiniTest::Test
       MealPlanner::Meal.new(
         carb: MealPlanner::Ingredient.new(name: "Bread", kind: "carb"),
         protein: MealPlanner::Ingredient.new(name: "Pork", kind: "protein"),
+        meal_type: :lunch
       ),
       MealPlanner::Meal.new(
         carb: MealPlanner::Ingredient.new(name: "Couscous", kind: "carb"),
         protein: MealPlanner::Ingredient.new(name: "Eggs", kind: "protein"),
+        meal_type: :lunch
       ),
       MealPlanner::Meal.new(
         carb: MealPlanner::Ingredient.new(name: "Pasta", kind: "carb"),
         protein: MealPlanner::Ingredient.new(name: "Salmon", kind: "protein"),
+        meal_type: :lunch
       )
     ]
 
@@ -94,6 +104,7 @@ class IngredientSamplerTest < MiniTest::Test
       MealPlanner::Meal.new(
         carb: MealPlanner::Ingredient.new(name: "Barley", kind: "carb"),
         protein: MealPlanner::Ingredient.new(name: "Eggs", kind: "protein"),
+        meal_type: :lunch
       )
     ]
 
@@ -107,14 +118,17 @@ class IngredientSamplerTest < MiniTest::Test
       MealPlanner::Meal.new(
         carb: MealPlanner::Ingredient.new(name: "Bread", kind: "carb"),
         protein: MealPlanner::Ingredient.new(name: "Eggs", kind: "protein"),
+        meal_type: :lunch
       ),
       MealPlanner::Meal.new(
         carb: MealPlanner::Ingredient.new(name: "Pasta", kind: "carb"),
         protein: MealPlanner::Ingredient.new(name: "Salmon", kind: "protein"),
+        meal_type: :lunch
       ),
       MealPlanner::Meal.new(
         carb: MealPlanner::Ingredient.new(name: "Couscous", kind: "carb"),
         protein: MealPlanner::Ingredient.new(name: "Pork", kind: "protein"),
+        meal_type: :lunch
       )
     ]
 

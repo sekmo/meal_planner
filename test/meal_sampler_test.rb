@@ -14,14 +14,23 @@ class MealPlanner::MealSamplerTest < MiniTest::Test
 
   def test_it_should_generate_a_meal_with_a_carb_a_protein_and_a_veggie
     current_meals = []
-    returned_meal = MealPlanner::MealSampler.generate(current_meals, @ingredient_sampler)
+    returned_meal = MealPlanner::MealSampler.generate(current_meals, @ingredient_sampler, meal_type: :lunch)
     assert_instance_of(MealPlanner::Ingredient, returned_meal.protein)
+    assert_instance_of(MealPlanner::Ingredient, returned_meal.carb)
+    assert_instance_of(MealPlanner::Ingredient, returned_meal.veggie)
+  end
+
+  def test_it_should_generate_a_meal_without_protein_if_meal_type_is_proteinfree_dinner
+    current_meals = []
+    returned_meal = MealPlanner::MealSampler.generate(current_meals, @ingredient_sampler, meal_type: :proteinfree_dinner)
+    assert_nil(returned_meal.protein)
     assert_instance_of(MealPlanner::Ingredient, returned_meal.carb)
     assert_instance_of(MealPlanner::Ingredient, returned_meal.veggie)
   end
 
   def test_it_should_generate_a_meal_different_from_the_ones_passed
     salmon_with_eggs = MealPlanner::Meal.new(
+      meal_type: :lunch,
       carb: MealPlanner::Ingredient.new(name: "Bread", kind: "carb"),
       protein: MealPlanner::Ingredient.new(name: "Salmon", kind: "protein"),
     )
@@ -30,7 +39,7 @@ class MealPlanner::MealSamplerTest < MiniTest::Test
     1_000.times do
       refute_equal(
         salmon_with_eggs,
-        MealPlanner::MealSampler.generate(current_meals, @ingredient_sampler)
+        MealPlanner::MealSampler.generate(current_meals, @ingredient_sampler, meal_type: :lunch)
       )
     end
   end

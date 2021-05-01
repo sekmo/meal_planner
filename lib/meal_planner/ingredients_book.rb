@@ -13,7 +13,8 @@ module MealPlanner
               name: ingredient[:name],
               kind: ingredient[:kind],
               quantity_for_lunch: ingredient[:quantity_for_lunch],
-              quantity_for_dinner: ingredient[:quantity_for_dinner]
+              quantity_for_dinner: ingredient[:quantity_for_dinner],
+              quantity_for_proteinfree_dinner: ingredient[:quantity_for_proteinfree_dinner]
             )
           end
       end

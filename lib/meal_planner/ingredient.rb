@@ -10,6 +10,7 @@ module MealPlanner
     end
 
     def ==(other_ingredient)
+      return false if other_ingredient.nil?
       name.downcase == other_ingredient.name.downcase
     end
 
