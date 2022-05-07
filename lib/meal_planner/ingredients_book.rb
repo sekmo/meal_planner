@@ -20,16 +20,8 @@ module MealPlanner
       end
     end
 
-    def carbs
-      @all_ingredients_by_kind[:carb]
-    end
-
-    def proteins
-      @all_ingredients_by_kind[:protein]
-    end
-
-    def veggies
-      @all_ingredients_by_kind[:veggie]
+    def ingredients_by_kind(kind)
+      @all_ingredients_by_kind[kind]
     end
   end
 end
